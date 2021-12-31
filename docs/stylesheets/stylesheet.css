@@ -251,7 +251,7 @@ a:hover {
     margin-bottom: 0; }
 .main-content table {
   display: block;
-  width: 100%;
+  width: 50%;
   overflow: auto;
   word-break: normal;
   word-break: keep-all; }
