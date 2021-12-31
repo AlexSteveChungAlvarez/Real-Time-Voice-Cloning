@@ -1,0 +1,137 @@
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <title>RTVC in Spanish</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="shortcut icon" type="image/x-icon" href="favicons/favicon.png">
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section id="page-header" class="page-header">
+        <div id="bg-header"></div>
+        <canvas id="demo-canvas"></canvas>
+        <div class="main-title">
+          <h1 class="project-name"><span><a href="index.html">RTVC Spanish</a></span></h1>
+          <h2 class="project-tagline">Real-Time Voice Cloning for Spanish Speakers</h2>
+
+        </div>
+    </section>
+
+    <section class="main-content">
+
+      <center>
+        <a href="https://github.com/AlexSteveChungAlvarez/Real-Time-Voice-Cloning-Spanish" class="btn2">• GitHub •</a>
+     <!--  <a href="https://arxiv.org/abs/2104.05557" class="btn2">• Paper on arXiv •</a></li>
+       <a href="https://github.com/Edresson/SC-GlowTTS/#colab-demos" class="btn2">• Colab demos •</a></li>-->
+       
+      </center>
+
+
+
+
+        <br>
+        <br>
+        <div style="text-align: center;">
+          <h2>Real-Time Voice Cloning for Spanish Speakers</h3>
+
+            <p> <b>Manolo Canales Cuba, Alex Steve Chung Alvarez </b></p>
+        
+
+        </div>
+
+
+        <h3>Abstract:</h3>
+
+      <p>
+        Text to Speech has been a very popular field for research in the last
+        three years. However, there are not many text to speech projects focused
+        in the spanish language. The main problem of text to speech is that a
+        big dataset of a target voice is needed in order to train a model with
+        that voice. To overcome this problem, real-time voice cloning has been
+        studied since 2018. In that year, the first implementation of real-time
+        voice cloning was published. We use this open source code to train a
+        spanish model of the synthesizer for real-time voice cloning. We provide
+        the first pre-trained spanish model of the synthesizer to the community.
+      </p>
+
+      <h3>System architecture:</h3>
+
+       <center><p><img src="system_architecture.png" width="560"></p></center>
+       <center><p><b>Source: </b><a href="https://arxiv.org/abs/1806.04558">Transfer learning
+        from speaker verification to multispeaker text-to-speech synthesis. </a></p></center>
+
+      <h3>Audio Samples for Original Test Audios</h3>
+
+<table border="1">
+<tr><td>Model</td><td colspan="12">Unseen Speaker (test)</td></tr>
+<tr>
+  <td></td>
+ 
+	<td>Speaker 1</td>
+<!-- <td>p234</td>
+  <td>p238</td>
+  <td>p245</td>
+	<td>p248</td>
+  <td>p261</td>
+  <td>p294</td>
+  <td>p302</td>
+	<td>p326</td>
+  <td>p335</td>
+  <td>p347</td>--> 
+</tr>
+
+<tr><td>Ground truth</td>
+  <td><audio controls style="width: 100px;" src="audios\original.mp4"></audio></td>
+</tr>
+
+<tr><td>Common Voice 100K steps</td>
+  <td><audio controls style="width: 100px;" src="audios\CV100K\common_voice_100k_demo.wav"></audio></td>
+</tr>
+
+<tr><td>Common Voice 125K steps</td>
+  <td><audio controls style="width: 100px;" src="audios\CV125K\common_voice_125k_demo.wav"></audio></td>
+  
+</tr>
+
+<tr><td>Common Voice 150K steps</td>
+  <td><audio controls style="width: 100px;" src="audios\CV150K\common_voice_150k_demo.wav"></audio></td>
+</tr>
+
+<tr><td>Common Voice 175K steps</td>
+  <td><audio controls style="width: 100px;" src="audios\CV175K\common_voice_175k_demo.wav"></audio></td>
+</tr>
+
+<tr><td>Common Voice 200K steps</td>
+  <td><audio controls style="width: 100px;" src="audios\CV200K\common_voice_200k_demo.wav"></audio></td>
+</tr>
+
+<tr><td>Common Voice 225K steps</td>
+  <td><audio controls style="width: 100px;" src="audios\CV225K\common_voice_225k_demo.wav"></audio></td>
+</tr>
+
+<tr><td>Multilingual LibriSpeech</td>
+  <td><audio controls style="width: 100px;" src="audios\MLS\multilingual_librispeech_demo.wav"></audio></td>
+</tr>
+
+<tr><td>Peruvian Spanish 50K steps</td>
+  <td>
+    <tr><audio controls style="width: 100px;" src="audios\pe_spa50k\peruvian_spanish_demo_00.wav"></audio></tr>
+    <tr><audio controls style="width: 100px;" src="audios\pe_spa50k\peruvian_spanish_demo_01.wav"></audio></tr>
+  </td>
+</tr>
+
+</table>
+
+    <span class="site-footer-owner"><center>Template by: <a href="https://github.com/mtreviso">mtreviso</a>.</center></span>
+    </section>
+
+    <script src="js/animheader.js"></script>
+  
+  </body>
+</html>
