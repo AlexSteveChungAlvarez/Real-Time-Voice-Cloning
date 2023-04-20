@@ -3,8 +3,8 @@ Cleaners are transformations that run over the input text at both training and e
 
 Cleaners can be selected by passing a comma-delimited list of cleaner names as the "cleaners"
 hyperparameter. Some cleaners are English-specific. You"ll typically want to use:
-  1. "spanish_cleaners" for Spanish text
-  2. "transliteration_cleaners" for non-Spanish text that can be transliterated to ASCII using
+  1. "french_cleaners" for French text
+  2. "transliteration_cleaners" for non-French text that can be transliterated to ASCII using
      the Unidecode library (https://pypi.python.org/pypi/Unidecode)
   3. "basic_cleaners" if you do not want to transliterate (in this case, you should also update
      the symbols in symbols.py to match your data).
@@ -19,18 +19,50 @@ _whitespace_re = re.compile(r"\s+")
 
 # List of (regular expression, replacement) pairs for abbreviations:
 _abbreviations = [(re.compile("\\b%s\\." % x[0], re.IGNORECASE), x[1]) for x in [
-  ("lic", "licenciado"),
-  ("mag", "magister"),
-  ("dr", "doctor"),
-  ("co", "colombia"),
-  ("jr", "jirón"),
-  ("av", "avenida"),
-  ("gen", "generación"),
-  ("sgt", "siguiente"),
-  ("q", "que"),
-  ("x", "por"),
-  ("pq", "porque"),
-  ("ps", "pues"),
+ ( "bjr" , "bonjour"),
+("bsr" , "bonsoir"),
+("auj" , "aujourd’hui"),
+("ir" , "hier"),
+("bi1to" , "bientôt"),
+("tds" , "tout de suite"),
+("vazi" , "vas-y"),
+("DQP" , "dès que possible"),
+("tjs" , "toujours"),
+("@+" , "à plus tard"),
+("@2m1" , "à demain"),
+("a tt" , "à tout à l’heure"),
+("kan" , "quand"),
+("ALP" , "à la prochaine"),
+("JMS" , "jamais"),
+("slt" , "salut"),
+("biz" , "bisous"),
+("M" , "merci"),
+("2 ri 1" , "de rien"),
+("STP/SVP" , "s’il te/vous plait"),
+("pk" , "pourquoi"),
+("ki" , "qui"),
+("p-ê" , "peut-être"),
+("d’ac" , "d’accord"),
+("dak" , "d’accord"),
+("cb1" , "c’est bien"),
+("XLent" , "excellent"),
+("ama" , "à mon avis"),
+("BCP" , "beaucoup"),
+("NRV" , "énervé"),
+("HT" , "acheter"),
+("TLM" , "tout le monde"),
+("ENTK" , "en tout cas"),
+("EDR" , "écroulé de rire"),
+("GspR b1" , "J’espère bien"),
+("Chui" , "Je suis"),
+("Je c" , "Je sais"),
+("C1Blag" , "C’est une blague"),
+("TOQP" , "T’es occupé ?"),
+("QDN" , "Quoi de neuf?"),
+("Koi29" , "Quoi de neuf?"),
+("Tata KS" , "T’as ta caisse ?"),
+("C pa 5pa" , "C’est pas sympa"),
+("G1id2kdo" , "J’ai une idée de cadeau")
 ]]
 
 
@@ -72,7 +104,7 @@ def transliteration_cleaners(text):
   return text
 
 
-def spanish_cleaners(text):
+def french_cleaners(text):
   """Pipeline for Spanish text, including number and abbreviation expansion."""
   text = convert_to_ascii(text)
   text = lowercase(text)

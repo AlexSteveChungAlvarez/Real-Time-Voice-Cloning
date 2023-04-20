@@ -13,14 +13,14 @@ def split_tux100h():
                 output_file.write(texts[i])
 
 def split_cvcorpus():
-    with Path("D:/tesis2/cv-corpus-7.0-2021-07-21/es/train.tsv").open("r", encoding="utf8") as metadata_file:
+    with Path("C:/datasets/cv-corpus-13.0-2023-03-09/fr/train.tsv").open("r", encoding="utf8") as metadata_file:
         metadata = [line.split("\t") for line in metadata_file]
         texts = [item[2] for item in metadata[1:]]
 
         audio_filenames = [item[1] for item in metadata[1:]]
         filename_parts = [filename.split(".") for filename in audio_filenames]
         names = [part[0] for part in filename_parts]
-        text_filenames = ["datasets_root/cvcorpus/valid/spanish/cv-corpus/" + name + ".txt" for name in names]
+        text_filenames = ["datasets_root/cvcorpus/train/french/cv-corpus/" + name + ".txt" for name in names]
         
         for i in tqdm(range(len(audio_filenames))):
             with Path(text_filenames[i]).open("w", encoding="utf8") as output_file:
@@ -28,8 +28,8 @@ def split_cvcorpus():
         
         for name in names:
             shutil.copyfile(
-                    'D:/tesis2/cv-corpus-7.0-2021-07-21/es/clips/'+name+'.mp3',
-                    'datasets_root/cvcorpus/valid/spanish/cv-corpus/'+name+'.mp3'
+                    'C:/datasets/cv-corpus-13.0-2023-03-09/fr/clips/'+name+'.mp3',
+                    'datasets_root/cvcorpus/train/french/cv-corpus/'+name+'.mp3'
                 )
 
 def split_pespa(gender):
@@ -44,12 +44,4 @@ def split_pespa(gender):
 
 
 if __name__=="__main__":
-    #for i in range(52408):
-    #    shutil.copyfile(
-    #            'datasets_root/tux100h-cvcorpus/valid/spanish/tux-100h/'+str(i)+'.wav',
-    #            'datasets_root/tux100h-cvcorpus/valid/spanish/tux-100h_new/utterance-'+str(i)+'.wav'
-    #        )
-    #split_tux100h()
-    #split_pespa("female")
-    #split_pespa("male")
     split_cvcorpus()

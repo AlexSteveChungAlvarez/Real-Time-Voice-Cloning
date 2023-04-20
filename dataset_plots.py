@@ -1,6 +1,6 @@
 from matplotlib import pyplot as plt
 from collections import Counter
-with open("D:/tesis2/cv-corpus-7.0-2021-07-21/es/train.tsv", encoding="utf8") as f:
+with open("C:/datasets/cv-corpus-13.0-2023-03-09/fr/train.tsv", encoding="utf8") as f:
     headers = f.readline()[:-1].split('\t')
     data = []
     for row in f:
